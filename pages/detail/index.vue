@@ -1,9 +1,9 @@
 <template>
-    <div class="intro" style="background-color:#6278B1">
-        <div class="text-center">
+    <div class="container-fluid pb-5" style="background-color:#6278B1">
+        <div class="text-center text-white pt-5">
             <h2>Pencarian buku</h2>
         </div>
-        <div class="container-fluid">
+        <div class="content text-white pt-3 ">
             <div class="row m-0">
                 <div class="col-sm-1">
                     <div class="icon1">
@@ -35,7 +35,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="layer-2">
+                    <div class="layer2">
                         <div class="col-lg-8">
                             <h2 class="text text-center">Detail buku</h2>
                             <div class="sinopsis">
@@ -60,22 +60,13 @@
 </template>
 
 <style scoped>
-.intro{
-    padding: 0;
-    height: 550%;
-}
 .text-center{
-    padding-top: 5%;
     font-family: "League Spartan", sans-serif;
     font-size: 190%;
-    color: white;
-    text-align: center;
 }
-.container-fluid{
-    padding-top: 3%;
+.content{
     font-family: "League Spartan", sans-serif;
     font-size: 190%;
-    color: white;
     text-align: center;
 }
 .form-control{
@@ -102,7 +93,6 @@
 }
 .card{
     height: 48%;
-    width: 100%;
     box-shadow: 1px 1px 1px #424242;
 }
 .card-img-top{
@@ -113,11 +103,8 @@
     padding-top: 5%;
     margin-left: 10%;
 }
-.btn{
-    font-size: 50%;
-}
 
-.layer-2{
+.layer2{
     background-color: #ffffff;
     border-radius: 25px;
     width: 70%;
