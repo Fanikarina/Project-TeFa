@@ -72,6 +72,13 @@
 </template>
 
 <style scoped>
+@media only screen and (min-width:900px){
+    .layer{
+        margin-left: 0% 20%;
+        margin:10%;
+    }
+}
+
 .text-center{
     font-family: "League Spartan", sans-serif;
     font-size: 190%;
@@ -79,8 +86,6 @@
 .layer{
     background-color: #cbd2e5;
     border-radius: 25px;
-    width: 60%;
-    margin-left: 20%;
     box-shadow: 2px 2px 2px #424242;
 }
 .btn{

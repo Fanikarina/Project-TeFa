@@ -1,43 +1,43 @@
 <template>
     <div class="container-fluid">
         <div class="text-center">
-            <h1>SELAMAT DATANG . . .</h1>
+            <h2>SELAMAT DATANG . . .</h2>
         </div>
-        <div class="row my-5 justify-content-center">
-            <div class="col-lg-4" >
+        <div class="row my-4 justify-content-center">
+            <div class="col-lg-4 col-6" >
                 <nuxt-link to="/pengunjung/tambah">
                     <div class="card bg-pengunjung rounded-5 mb-4">
                         <div class="card-body text-dark mt-5">
-                            <h2>Kunjungan</h2> 
+                            <h3>Kunjungan</h3> 
                         </div>
                     </div> 
                 </nuxt-link> 
             </div>
-            <div class="col-lg-4" >
+            <div class="col-lg-4 col-6" >
                 <nuxt-link to="buku">
-                    <div class="card bg-buku rounded-5">
+                    <div class="card bg-buku rounded-5 ">
                         <div class="card-body text-dark mt-5">
-                            <h2>Cari buku</h2>
+                            <h3>Cari buku</h3>
                         </div>
                     </div>
                 </nuxt-link>
             </div>
         </div>
         <div class="row pb-5 justify-content-center">
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-6">
                 <nuxt-link to="/pengunjung">
                     <div class="card bg-riwayat rounded-5 mb-4">
                         <div class="card-body text-dark mt-5">
-                            <h2>3 Pengunjung</h2>
+                            <h3>3 Pengunjung</h3>
                         </div>
                     </div>
                 </nuxt-link>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-6">
                 <nuxt-link to="/buku">
                     <div class="card buku rounded-5">
                         <div class="card-body text-dark mt-5">
-                            <h2>2 Buku</h2>
+                            <h3>2 Buku</h3>
                         </div>
                     </div>
                 </nuxt-link>
@@ -48,13 +48,23 @@
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+@media screen and (max-width:728px) {
+    .card{
+        height: 50px;
+    }
+    h2{
+        font-size: 1em;
+    }
+    h3{
+        font-size: large;
+    }
+}
 .container-fluid{
     background-color: #6278B1;
 }
-h1{
+h2{
     padding-top: 5%;
     font-family: "League Spartan", sans-serif;
-    font-size: 190%;
     color: white;
     text-align: center;
 }
@@ -68,13 +78,13 @@ h1{
     border-radius: 30px;
     box-shadow: 1px 1px 10px #424242;
 } */
-.bg{
+/* .bg{
     height: 200px;
     box-shadow: 1px 1px 10px #424242;
-}
+} */
 .card{
     align-items: center;
-    height: 200px;
+    height: 180px;
     box-shadow: 1px 1px 10px #424242;
 }
 .card.bg-pengunjung{
