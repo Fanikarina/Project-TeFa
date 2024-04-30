@@ -6,11 +6,13 @@
         <div class="content text-white pt-3 ">
             <div class="row m-0">
                 <div class="col-sm-1">
-                    <div class="icon1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="40" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
-                        </svg>
-                    </div>
+                    <NuxtLink to="/">
+                        <div class="icon1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="150" height="40" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+                            </svg>
+                        </div>
+                    </NuxtLink>
                 </div>
                 <div class="col-sm-2">
                     <select class="form-select" aria-label="Default select example" style="box-shadow: 2px 2px 2px #424242;">
@@ -37,20 +39,6 @@
                     </div>
                     <div class="layer2">
                         <div class="col-lg-8">
-                            <div class="card mb-3" style="max-width: 540px;">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img src="..." class="img-fluid rounded-start" alt="...">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <h2 class="text text-center">Detail buku</h2>
                             <div class="sinopsis">
                                 <p>Judul : Mariposa 2</p>
