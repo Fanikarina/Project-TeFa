@@ -8,7 +8,7 @@
         <div class="layer2 pt-2">
           <div class="row">
             <div class="col-sm-1">
-              <NuxtLink to="/">
+              <NuxtLink to="/" style="color:white !important">
                 <div class="icon1">
                   <i class="bi bi-chevron-left"></i>
                 </div>

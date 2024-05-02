@@ -5,7 +5,7 @@
         </div>
         <div class="row my-4 justify-content-center">
             <div class="col-lg-4 col-6" >
-                <nuxt-link to="/pengunjung/tambah">
+                <nuxt-link to="/pengunjung/tambah" style="text-decoration:none">
                     <div class="card bg-pengunjung rounded-5 mb-4">
                         <div class="card-body text-dark mt-5">
                             <h3>Kunjungan</h3> 
@@ -14,7 +14,7 @@
                 </nuxt-link> 
             </div>
             <div class="col-lg-4 col-6" >
-                <nuxt-link to="buku">
+                <nuxt-link to="buku" style="text-decoration:none">
                     <div class="card bg-buku rounded-5 ">
                         <div class="card-body text-dark mt-5">
                             <h3>Cari buku</h3>
@@ -25,7 +25,7 @@
         </div>
         <div class="row pb-5 justify-content-center">
             <div class="col-lg-4 col-6">
-                <nuxt-link to="/pengunjung">
+                <nuxt-link to="/pengunjung" style="text-decoration:none">
                     <div class="card bg-riwayat rounded-5 mb-4">
                         <div class="card-body text-dark mt-5">
                             <h3>3 Pengunjung</h3>
@@ -34,7 +34,7 @@
                 </nuxt-link>
             </div>
             <div class="col-lg-4 col-6">
-                <nuxt-link to="/buku">
+                <nuxt-link to="/buku" style="text-decoration:none">
                     <div class="card buku rounded-5">
                         <div class="card-body text-dark mt-5">
                             <h3>2 Buku</h3>

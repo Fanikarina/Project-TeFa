@@ -6,7 +6,7 @@
         <div class="content text-white pt-3 ">
             <div class="row m-0">
                 <div class="col-sm-1">
-                    <NuxtLink to="/">
+                    <NuxtLink to="/" style="color:white !important">
                         <div class="icon1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="150" height="40" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
@@ -30,9 +30,9 @@
             <div class="layer">
                 <div class="card">
                     <img src="~/assets/img/mariposa.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="#" class="btn" style="margin-top: -20%;"></a>
-                    </div>
+                    <!-- <div class="card-body">
+                        <a href="#" class="btn"></a>
+                    </div> -->
                 </div>
                 <div class="layer2">
                     <h2 class="text text-center">Detail buku</h2>
@@ -79,7 +79,7 @@
     .card-img-top{
         object-fit: cover;
         object-position: 0 30;
-        padding-top: 5%;
+        /* padding-top: 5%; */
     }
 
     .layer2{
@@ -132,7 +132,7 @@
 .card-img-top{
     object-fit: cover;
     object-position: 0 30;
-    padding-top: 5%;
+    /* padding-top: 5%; */
     margin: auto;
 }
 

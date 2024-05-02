@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-lg-1 col-4">
                         <div class="icon1">
-                            <NuxtLink to="/">
+                            <NuxtLink to="/" style="color:white !important">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="150" height="40" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
                                 </svg>
@@ -31,7 +31,7 @@
             <table class="table table-bordered text-white text-center " style="font-size: medium;">
                 <thead>
                     <tr>
-                        <td>#</td>
+                        <td>No</td>
                         <td>NAMA</td>
                         <td>KATEGORI</td>
                         <td>KELAS</td>
@@ -40,43 +40,31 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th>1.</th>
-                        <td>Fani Karina</td>
-                        <td>Siswa</td>
-                        <td>XI PPLG 3</td>
-                        <td>10 Maret 2024, 29.57.00</td>
-                        <td>Membaca buku</td>
-                    </tr>
-                    <tr>
-                        <th>2.</th>
-                        <td>Fani lagi</td>
-                        <td>Siswa</td>
-                        <td>XI PPLG 3</td>
-                        <td>10 Maret 2024, 29.57.00</td>
-                        <td>Membaca buku</td>
-                    </tr>
-                    <tr>
-                        <th>3.</th>
-                        <td>Fani lagi</td>
-                        <td>Siswa</td>
-                        <td>XI PPLG 3</td>
-                        <td>10 Maret 2024, 29.57.00</td>
-                        <td>Membaca buku</td>
-                    </tr>
-                    <tr>
-                        <th>4.</th>
-                        <td>Fani lagi</td>
-                        <td>Siswa</td>
-                        <td>XI PPLG 3</td>
-                        <td>10 Maret 2024, 29.57.00</td>
-                        <td>Membaca buku</td>
+                    <tr v-for="(visitor,i) in visitors" :key="i" >
+                        <th>{{ i+1 }}</th>
+                        <td>{{ visitor.nama }}</td>
+                        <td>{{ visitor.keanggotaan.nama }}</td>
+                        <td>{{ visitor.tingkat }} {{ visitor.jurusan }} {{ visitor.kelas }}</td>
+                        <td>{{ visitor.tanggal }}, {{ visitor.waktu }}</td>
+                        <td>{{ visitor.keperluan.nama }}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </template>
+<script setup>
+const supabase= useSupabaseClient()
+const visitors = ref([])
+const getPengunjung = async () => {
+    const { data, error } = await supabase.from('pengunjung')
+    .select(`*,keanggotaan(*),keperluan(*)`)
+    if (data) visitors.value = data
+}
+onMounted(() => {
+    getPengunjung()
+})
+</script>
 
 <style scoped>
 
