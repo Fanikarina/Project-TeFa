@@ -14,7 +14,7 @@
                         </div>
                     </NuxtLink>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-2 mb-2">
                     <select class="form-select" aria-label="Default select example" style="box-shadow: 2px 2px 2px #424242;">
                         <option selected>Novel</option>
                         <option value="1">Pendidikan</option>
@@ -22,39 +22,33 @@
                         <option value="3">Komik</option>
                     </select>
                 </div>
-                <div class="col-sm-7">
+                <div class="col-sm-8">
                     <input type="text" style="box-shadow: 2px 2px 2px #424242;" class="form-control" placeholder="Mariposa" aria-label="Mariposa" />
                 </div>
             </div>
             <div class="my-3" style="font-size: medium;">Menampilkan 1 dari 1</div>
             <div class="layer">
-                <div class="row buku">
-                    <div class="col-lg-2">
-                        <div class="card">
-                            <img src="~/assets/img/mariposa.jpeg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <a href="#" class="btn" style="margin-top: -20%;">Lihat detail</a>
-                            </div>
-                        </div>
+                <div class="card">
+                    <img src="~/assets/img/mariposa.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="#" class="btn" style="margin-top: -20%;"></a>
                     </div>
-                    <div class="layer2">
-                        <div class="col-lg-8">
-                            <h2 class="text text-center">Detail buku</h2>
-                            <div class="sinopsis">
-                                <p>Judul : Mariposa 2</p>
-                                <p>Penulis : Luluk HF</p> 
-                                <p>Penerbit : Coconut Books</p> 
-                                <p>Tahun terbit :  5 Februari 2022</p>
-                                <p>Sinopsis buku : </p>
-                                    <p class="keterangan">Meninggalnya Mr. Bov menciptakan kehancuran bagi Iqbal. Iqbal menyalahkan Acha atas kepergian papanya itu. Melihat kondisi Iqbal yang tak kunjung membaik membuat keluarga besar Iqbal memutuskan untuk pindah ke Prancis. Di tengah permasalahan hubungan Iqbal dan Acha, datanglah Glen yang selalu ada di samping Acha.</p> 
-                                <p>Kategori : Novel</p>
-                                <p>Rak : 02</p>
-                            </div>
-                            <NuxtLink to="/buku">
-                                <input type="submit" class="button" value="Tutup">
-                            </NuxtLink>
-                        </div>
+                </div>
+                <div class="layer2">
+                    <h2 class="text text-center">Detail buku</h2>
+                    <div class="sinopsis">
+                        <p>Judul : Mariposa 2</p>
+                        <p>Penulis : Luluk HF</p> 
+                        <p>Penerbit : Coconut Books</p> 
+                        <p>Tahun terbit :  5 Februari 2022</p>
+                        <p>Sinopsis buku : </p>
+                            <p class="keterangan">Meninggalnya Mr. Bov menciptakan kehancuran bagi Iqbal. Iqbal menyalahkan Acha atas kepergian papanya itu. Melihat kondisi Iqbal yang tak kunjung membaik membuat keluarga besar Iqbal memutuskan untuk pindah ke Prancis. Di tengah permasalahan hubungan Iqbal dan Acha, datanglah Glen yang selalu ada di samping Acha.</p> 
+                        <p>Kategori : Novel</p>
+                        <p>Rak : 02</p>
                     </div>
+                    <NuxtLink to="/buku">
+                        <input type="submit" class="button" value="Tutup">
+                    </NuxtLink>
                 </div>
             </div>
         </div>  
@@ -62,6 +56,42 @@
 </template>
 
 <style scoped>
+@media only screen and (max-width:900px){
+    .layer{
+        flex-direction: column;
+        margin-top: 1%;
+        background-color: #cbd2e5;
+        border-radius: 25px;
+        width: 100%;
+        box-shadow: 2px 2px 2px #727272;
+    }
+    .row.buku{
+        padding-top: 2%;
+        margin-left: 2%;
+        border-radius: 50px;
+        
+    }
+    .card{
+        box-shadow: 1px 1px 1px #424242;
+        margin-bottom: 2rem;
+        margin: auto;
+    }
+    .card-img-top{
+        object-fit: cover;
+        object-position: 0 30;
+        padding-top: 5%;
+    }
+
+    .layer2{
+        background-color: #ffffff;
+        border-radius: 25px;
+        width: 100%;
+        margin: auto;
+        box-shadow: 1px 1px 1px #424242;
+    }
+}
+
+
 .text-center{
     font-family: "League Spartan", sans-serif;
     font-size: 190%;
@@ -71,20 +101,21 @@
     font-size: 190%;
     text-align: center;
 }
-.form-control{
-    width: 115%;
-}
 .my-3{
     padding-right: 75%;
     padding-top: 3%;
     color: white;
 }
 .layer{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 45px;
+    padding: 46px;
+    width: 100%;
     margin-top: 1%;
     background-color: #cbd2e5;
     border-radius: 25px;
-    width: 90%;
-    margin-left: 5%;
     box-shadow: 2px 2px 2px #727272;
 }
 .row.buku{
@@ -94,23 +125,21 @@
     
 }
 .card{
-    height: 48%;
     box-shadow: 1px 1px 1px #424242;
+    margin-bottom: 2rem;
+    padding: 10px;
 }
 .card-img-top{
-    width: 80%;
-    height: 100%;
     object-fit: cover;
     object-position: 0 30;
     padding-top: 5%;
-    margin-left: 10%;
+    margin: auto;
 }
 
 .layer2{
     background-color: #ffffff;
     border-radius: 25px;
-    width: 70%;
-    margin-left: 5%;
+    width: 100%;
     margin-bottom: 2%;
     box-shadow: 1px 1px 1px #424242;
 }
@@ -120,7 +149,6 @@
     font-size: 65%;
     color: rgb(0, 0, 0);
     text-align: center;
-    margin-left: 50%;
 
 }
 .sinopsis{
@@ -131,15 +159,13 @@
     margin-left: 5%;
 }
 .keterangan{
-    margin-left: 20%;
+    margin: auto;
 }
 .button{
     font-size: medium;
     background-color: white;
-    width: 12%;
     border-radius: 10%;
     box-shadow: 1px 1px 1px #8a8a8a;
-    margin-left: 120%;
     margin-bottom: 2%;
 }
 </style>
