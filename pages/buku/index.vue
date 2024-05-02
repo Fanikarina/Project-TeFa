@@ -22,29 +22,21 @@
                 <option value="3">Komik</option>
               </select>
             </div>
-            <div class="col-sm-8 mb-2">
+            <form @submit.prevent="getBooks" class="col-sm-8 mb-2">
               <div class="input-group flex-nowrap rounded" style="box-shadow: 2px 2px 2px #424242">
-                <input type="search" class="form-control" placeholder="Cari..." aria-label="Search" />
+                <input v-model="keyword" type="search" class="form-control" placeholder="Cari..." aria-label="Search" />
                 <span class="input-group-text">
                   <i class="bi bi-search"></i>
                 </span>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
       <div class="pt-5 ps-5 ms-4 text-white" style="font-size: medium">Menampilkan 2 dari 2</div>
       <div class="layer3 p-4">
         <div class="row buku">
-          <div class="col-lg-2 mb-4">
-            <div class="card">
-              <img src="~/assets/img/bot.jpeg" class="card-img-top" alt="..." />
-              <div class="card-body p-0">
-                <a href="#" class="btn d-flex justify-content-center">Lihat detail</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-2 mb-4">
+          <div v-for="(book,i) in books" :key="i" class="col-lg-2 mb-4">
             <div class="card">
               <img src="~/assets/img/mariposa.jpeg" class="card-img-top" alt="..." />
               <NuxtLink to="/detail">
@@ -59,7 +51,24 @@
     </div>
   </div>
 </template>
+<script setup>
+const supabase= useSupabaseClient()
 
+const books = ref([])
+const getBooks = async () =>{
+  const { data,error } = await supabase.from('buku')
+  .select(`*,kategori(*)`)
+  .ilike('judul',`%${keyword.value}`)
+  if(data) books.value = data
+}
+
+onMounted(() =>{
+  getBooks
+})
+
+const keyword =ref('')
+
+</script>
 <style scoped>
 .text-center {
   font-family: "League Spartan", sans-serif;
