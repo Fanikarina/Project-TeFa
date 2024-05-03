@@ -8,7 +8,7 @@
         <div class="layer2 pt-2">
           <div class="row">
             <div class="col-sm-1">
-              <NuxtLink to="/" style="color:white !important">
+              <NuxtLink to="/" style="color: white !important">
                 <div class="icon1">
                   <i class="bi bi-chevron-left"></i>
                 </div>
@@ -16,10 +16,14 @@
             </div>
             <div class="col-sm-3 mb-2">
               <select class="form-select" aria-label="Default select example" style="box-shadow: 2px 2px 2px #424242">
-                <option selected>Kategori buku</option>
-                <option value="1">Pendidikan</option>
-                <option value="2">Novel</option>
-                <option value="3">Komik</option>
+                <option selected disabled>Kategori buku</option>
+                <option value="1">Bahasa</option>
+                <option value="2">Kesusastraan</option>
+                <option value="3">Sains dan Matematika</option>
+                <option value="3">Sejarah dan Geografi</option>
+                <option value="3">Seni dan Rekreasi</option>
+                <option value="3">Sosial</option>
+                <option value="3">Umum</option>
               </select>
             </div>
             <form @submit.prevent="getBooks" class="col-sm-8 mb-2">
@@ -36,10 +40,10 @@
       <div class="pt-5 ps-5 ms-4 text-white" style="font-size: medium">Menampilkan 2 dari 2</div>
       <div class="layer3 p-4">
         <div class="row buku">
-          <div v-for="(book,i) in books" :key="i" class="col-lg-2 mb-4">
+          <div v-for="(book, i) in books" :key="i" class="col-lg-2 mb-4">
             <div class="card">
               <img src="~/assets/img/mariposa.jpeg" class="card-img-top" alt="..." />
-              <NuxtLink to="/detail">
+              <NuxtLink to="/buku/[id]" style="text-decoration:none">  
                 <div class="card-body p-0">
                   <a href="#" class="btn d-flex justify-content-center">Lihat detail</a>
                 </div>
@@ -52,22 +56,20 @@
   </div>
 </template>
 <script setup>
-const supabase= useSupabaseClient()
+const supabase = useSupabaseClient();
 
-const books = ref([])
-const getBooks = async () =>{
-  const { data,error } = await supabase.from('buku')
-  .select(`*,kategori(*)`)
-  .ilike('judul',`%${keyword.value}`)
-  if(data) books.value = data
-}
+const books = ref([]);
+const getBooks = async () => {
+  const { data, error } = await supabase.from("buku").select(`*,kategori(*)`).ilike("judul", `%${keyword.value}`);
+  if (error) throw error;
+  if (data) books.value = data;
+};
 
-onMounted(() =>{
-  getBooks
-})
+onMounted(() => {
+  getBooks();
+});
 
-const keyword =ref('')
-
+const keyword = ref("");
 </script>
 <style scoped>
 .text-center {
