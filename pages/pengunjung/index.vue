@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <div class="my-3 ps-2 text-white pt-5"  style="font-size: medium;">Menampilkan 4 dari 4</div>
+        <div class="my-3 ps-2 text-white pt-5"  style="font-size: medium;">Menampilkan {{ visitors.length }} dari {{ visitors.length }}</div>
         <div class="table-responsive">
             <table class="table table-bordered text-white text-center " style="font-size: medium;">
                 <thead>
@@ -55,12 +55,15 @@
 </template>
 <script setup>
 const supabase= useSupabaseClient()
+
 const visitors = ref([])
+
 const getPengunjung = async () => {
     const { data, error } = await supabase.from('pengunjung')
     .select(`*,keanggotaan(*),keperluan(*)`)
     if (data) visitors.value = data
 }
+
 onMounted(() => {
     getPengunjung()
 })

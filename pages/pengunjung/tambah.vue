@@ -12,7 +12,7 @@
                 </div>
                 <div class="row m-3 justify-content-center">
                     <div class="col-sm-12">
-                        <select v-model="keanggotaan" class="form-control form-control-lg form-select" style="box-shadow: 2px 2px 2px #424242;">
+                        <select @change="cekKeanggotaan" v-model="keanggotaan" class="form-control form-control-lg form-select" style="box-shadow: 2px 2px 2px #424242;">
                             <option value="" disabled>Kategori</option>
                             <option v-for="(keanggotaan,i) in members" :key="i" :value="keanggotaan.id">{{ keanggotaan.nama }}</option>
                         </select>
@@ -95,6 +95,14 @@ const getKeanggotaan = async () =>{
 const getKeperluan = async () =>{
     const { data, error } = await supabase.from('keperluan').select('*')
     if (data) objectives.value = data
+}
+const cekKeanggotaan = e => {
+    if(e.target.value != '2'){
+        tingkat.value=""
+        jurusan.value=""
+        kelas.value=""  
+    }
+
 }
 onMounted(() =>{
     getKeanggotaan()

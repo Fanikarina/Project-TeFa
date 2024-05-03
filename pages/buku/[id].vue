@@ -16,7 +16,6 @@
                 </div>
                 <div class="col-sm-2 mb-2">
                     <select class="form-select" aria-label="Default select example" style="box-shadow: 2px 2px 2px #424242;">
-                        <option selected>Novel</option>
                         <option value="1">Bahasa</option>
                         <option value="2">Kesusastraan</option>
                         <option value="3">Sains dan Matematika</option>
@@ -27,13 +26,14 @@
                     </select>
                 </div>
                 <div class="col-sm-8">
-                    <input type="text" style="box-shadow: 2px 2px 2px #424242;" class="form-control" placeholder="Mariposa" aria-label="Mariposa" />
+                    <input type="text" style="box-shadow: 2px 2px 2px #424242;" class="form-control" placeholder="" aria-label="" />
                 </div>
             </div>
-            <div class="my-3" style="font-size: medium;">Menampilkan 1 dari 1</div>
+            <div class="my-3" style="font-size: medium;">Menampilkan {{ buku.length }} dari {{ buku.length }}</div>
             <div class="layer">
                 <div class="card">
-                    <img src="~/assets/img/mariposa.jpeg" class="card-img-top" alt="...">
+                    <!-- <img src="~/assets/img/mariposa.jpeg" class="card-img-top" alt="..."> -->
+                    <img :src="buku.coverBuku" class="cover" alt="cover buku">
                     <!-- <div class="card-body">
                         <a href="#" class="btn"></a>
                     </div> -->
@@ -41,14 +41,13 @@
                 <div class="layer2">
                     <h2 class="text text-center">Detail buku</h2>
                     <div class="sinopsis">
-                        <p>Judul : Mariposa 2</p>
-                        <p>Penulis : Luluk HF</p> 
-                        <p>Penerbit : Coconut Books</p> 
-                        <p>Tahun terbit :  5 Februari 2022</p>
-                        <p>Sinopsis buku : </p>
-                            <p class="keterangan">Meninggalnya Mr. Bov menciptakan kehancuran bagi Iqbal. Iqbal menyalahkan Acha atas kepergian papanya itu. Melihat kondisi Iqbal yang tak kunjung membaik membuat keluarga besar Iqbal memutuskan untuk pindah ke Prancis. Di tengah permasalahan hubungan Iqbal dan Acha, datanglah Glen yang selalu ada di samping Acha.</p> 
-                        <p>Kategori : Novel</p>
-                        <p>Rak : 02</p>
+                        <p>Judul : {{ buku.judul }}</p>
+                        <p>Penulis : {{ buku.penulis }}</p> 
+                        <p>Penerbit : {{ buku.penerbit }}</p> 
+                        <p>Tahun terbit : {{ buku.tahun_terbit }}</p>
+                        <p>Sinopsis : {{ buku.sinopsis }}</p>
+                        <p>Kategori : {{ buku.kategori_buku?.nama}}</p>
+                        <p>Rak : {{ buku.rak }}</p>
                     </div>
                     <NuxtLink to="/buku">
                         <input type="submit" class="button" value="Tutup">
@@ -61,16 +60,17 @@
 
 <script setup>
 const supabase = useSupabaseClient()
-const route = useRaute()
+
+const route = useRoute()
 const buku = ref([])
+
 const getBookById = async () =>{
-    const { data, error } = await supabase.from('buku')
-    .select(`*,kategori(*)`)
-    .eq('id', route.params.id)
+    const { data, error } = await supabase.from('buku').select(`*,kategori_buku(*)`).eq('id', route.params.id)
+    console.log(data)
     if(data) buku.value = data[0]
 }
 onMounted(() =>{
-    getBookById
+    getBookById()
 })
 </script>
 

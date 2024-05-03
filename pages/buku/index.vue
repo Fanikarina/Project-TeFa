@@ -15,15 +15,9 @@
               </NuxtLink>
             </div>
             <div class="col-sm-3 mb-2">
-              <select class="form-select" aria-label="Default select example" style="box-shadow: 2px 2px 2px #424242">
-                <option selected disabled>Kategori buku</option>
-                <option value="1">Bahasa</option>
-                <option value="2">Kesusastraan</option>
-                <option value="3">Sains dan Matematika</option>
-                <option value="3">Sejarah dan Geografi</option>
-                <option value="3">Seni dan Rekreasi</option>
-                <option value="3">Sosial</option>
-                <option value="3">Umum</option>
+              <select v-model="keyword" class="form-select" aria-label="Default select example" style="box-shadow: 2px 2px 2px #424242">
+                <option value="">Kategori buku</option>
+                <option v-for="(kategori,i) in kategories" :key="i" :value="kategori.nama">{{ kategori.nama }}</option>
               </select>
             </div>
             <form @submit.prevent="getBooks" class="col-sm-8 mb-2">
@@ -37,13 +31,13 @@
           </div>
         </div>
       </div>
-      <div class="pt-5 ps-5 ms-4 text-white" style="font-size: medium">Menampilkan 2 dari 2</div>
+      <div class="pt-5 ps-5 ms-4 text-white" style="font-size: medium">Menampilkan {{ books.length }} buku</div>
       <div class="layer3 p-4">
         <div class="row buku">
-          <div v-for="(book, i) in books" :key="i" class="col-lg-2 mb-4">
+          <div v-for="(book, i) in bookFiltered" :key="i" class="col-lg-2 mb-4">
             <div class="card">
-              <img src="~/assets/img/mariposa.jpeg" class="card-img-top" alt="..." />
-              <NuxtLink to="/buku/[id]" style="text-decoration:none">  
+              <img :src="book.cover_buku" class="card-img-top" alt="..." />
+              <NuxtLink :to="`/buku/${book.id}`" style="text-decoration:none">  
                 <div class="card-body p-0">
                   <a href="#" class="btn d-flex justify-content-center">Lihat detail</a>
                 </div>
@@ -58,18 +52,43 @@
 <script setup>
 const supabase = useSupabaseClient();
 
+const kategories=ref([])
+const keyword = ref('')
+
 const books = ref([]);
+
 const getBooks = async () => {
-  const { data, error } = await supabase.from("buku").select(`*,kategori(*)`).ilike("judul", `%${keyword.value}`);
-  if (error) throw error;
-  if (data) books.value = data;
+  const { data, error } = await supabase.from("buku").select(`*,kategori(*)`).ilike("judul", `%${keyword.value}`)
+  if (data) {
+    books.value = data;
+    data.forEach(book => {
+      const { data } = supabase.storage.from('coverBuku').getPublicUrl(book.cover_buku)
+      if (data) {
+        book.cover_buku = data.publicUrl
+      }
+    })
+  }
 };
+
+const getKategori = async () =>{
+    const { data, error } = await supabase.from('kategori_buku').select('*')
+    if (data) kategories.value = data
+}
+
+const bookFiltered = computed (() =>{
+    return books.value.filter((b) =>{
+        return (
+            b.judul?.toLowerCase().includes(keyword.value?.toLowerCase()) || 
+            b.kategori?.nama.toLowerCase().includes(keyword.value?.toLowerCase())
+        )
+    })
+})
 
 onMounted(() => {
   getBooks();
-});
+  getKategori();
+})
 
-const keyword = ref("");
 </script>
 <style scoped>
 .text-center {
