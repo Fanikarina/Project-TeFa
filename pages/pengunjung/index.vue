@@ -15,14 +15,14 @@
                             </NuxtLink>
                         </div>
                     </div>
-                    <div class="col-sm-10 col-7 mb-2">
-                        <div class="input-group flex-nowrap rounded" style="box-shadow: 2px 2px 2px #424242;">
-                            <input type="search" class="form-control" placeholder="Cari..." aria-label="Search" />
+                    <form @submit.prevent="getPengunjung" class="col-10 ps-5 mb-2">
+                        <div class="input-group flex-nowrap rounded" style="box-shadow: 2px 2px 2px #424242">
+                            <input v-model="keyword" type="search" class="form-control" placeholder="Cari..." aria-label="Search" />
                             <span class="input-group-text">
                                 <i class="bi bi-search"></i>
-                            </span> 
+                            </span>
                         </div>
-                    </div>   
+                    </form>  
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@
                         <td>{{ visitor.nama }}</td>
                         <td>{{ visitor.keanggotaan.nama }}</td>
                         <td>{{ visitor.tingkat }} {{ visitor.jurusan }} {{ visitor.kelas }}</td>
-                        <td>{{ visitor.tanggal }}, {{ visitor.waktu }}</td>
+                        <td>{{ visitor.tanggal }}, {{ visitor.waktu.split('.')[0] }}</td>
                         <td>{{ visitor.keperluan.nama }}</td>
                     </tr>
                 </tbody>
@@ -57,10 +57,12 @@
 const supabase= useSupabaseClient()
 
 const visitors = ref([])
+// const vivitor = ref([])
+const keyword = ref('')
 
 const getPengunjung = async () => {
     const { data, error } = await supabase.from('pengunjung')
-    .select(`*,keanggotaan(*),keperluan(*)`)
+    .select(`*,keanggotaan(*),keperluan(*)`).ilike("nama", `%${keyword.value}`)
     if (data) visitors.value = data
 }
 
@@ -89,5 +91,9 @@ onMounted(() => {
 }
 .form-control {
     border-right:none;
+}
+
+thead {
+    background-color: #3b4b77bb;
 }
 </style>

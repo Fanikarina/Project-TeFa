@@ -34,9 +34,9 @@
       <div class="pt-5 ps-5 ms-4 text-white" style="font-size: medium">Menampilkan {{ books.length }} buku</div>
       <div class="layer3 p-4">
         <div class="row buku">
-          <div v-for="(book, i) in bookFiltered" :key="i" class="col-lg-2 mb-4">
-            <div class="card">
-              <img :src="book.cover_buku" class="card-img-top" alt="..." />
+          <div v-for="(book, i) in bookFiltered" :key="i" class="col-lg-2 lg-1 mb-4">
+            <div class="card rounded-4">
+              <img :src="book.cover_buku" class="card-img-top rounded mx-auto" alt="..." />
               <NuxtLink :to="`/buku/${book.id}`" style="text-decoration:none">  
                 <div class="card-body p-0">
                   <a href="#" class="btn d-flex justify-content-center">Lihat detail</a>
@@ -91,6 +91,12 @@ onMounted(() => {
 
 </script>
 <style scoped>
+/* @media (min-width: 990px) { 
+  .card{
+
+  }
+ } */
+
 .text-center {
   font-family: "League Spartan", sans-serif;
   font-size: 190%;
@@ -105,34 +111,37 @@ onMounted(() => {
 }
 .form-control {
   border-right: none;
-  width: 0%;
 }
 .layer2 {
-  width: 90%;
-  margin-left: 5%;
+  width: 80%;
+  margin:auto;
   padding: 0;
 }
 .layer3 {
   background-color: #cbd2e5;
   border-radius: 25px;
-  width: 90%;
-  margin-left: 5%;
+  margin:auto;
   box-shadow: 2px 2px 2px #424242;
 }
-.row.buku {
+.buku {
   border-radius: 50px;
   object-fit: cover;
 }
-
+.card{
+  height: 250px;
+  width: 170px;
+  margin: auto;
+}
 .card-img-top {
   width: 80%;
   height: 100%;
   object-fit: cover;
   object-position: 0 30;
   padding-top: 5%;
-  margin-left: 10%;
+  margin:auto;
 }
 .btn {
   font-size: 50%;
 }
+
 </style>
