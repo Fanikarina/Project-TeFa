@@ -6,7 +6,7 @@
         <div class="content text-white pt-3 ">
             <div class="row m-0">
                 <div class="col-sm-1">
-                    <NuxtLink to="/" style="color:white !important">
+                    <NuxtLink to="/buku/" style="color:white !important">
                         <div class="icon1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="150" height="40" fill="currentColor"
                                 class="bi bi-chevron-left" viewBox="0 0 16 16">
@@ -63,7 +63,6 @@ const kategories = ref([])
 
 const getBookById = async () => {
     const { data, error } = await supabase.from('buku').select(`*,kategori_buku(*)`).eq('id', route.params.id)
-    console.log(data)
     if (data) buku.value = data[0]
     data.forEach(book => {
         const { data } = supabase.storage.from('coverBuku').getPublicUrl(book.cover_buku)
