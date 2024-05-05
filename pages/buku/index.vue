@@ -20,7 +20,7 @@
                 <option v-for="(kategori,i) in kategories" :key="i" :value="kategori.nama">{{ kategori.nama }}</option>
               </select>
             </div>
-            <form @submit.prevent="getBooks" class="col-sm-8 mb-2">
+            <form @submit.prevent="getBooks" class="col-sm-8 mb-3">
               <div class="input-group flex-nowrap rounded" style="box-shadow: 2px 2px 2px #424242">
                 <input v-model="keyword" type="search" class="form-control" placeholder="Cari..." aria-label="Search" />
                 <span class="input-group-text">
@@ -31,10 +31,10 @@
           </div>
         </div>
       </div>
-      <div class="pt-5 ps-5 ms-4 text-white" style="font-size: medium">Menampilkan {{ books.length }} buku</div>
+      <div class="pt-5 ms-4 text-white" style="font-size: medium">Menampilkan {{ books.length }} dari {{ books.length }} buku</div>
       <div class="layer3 p-4">
         <div class="row buku">
-          <div v-for="(book, i) in bookFiltered" :key="i" class="col-lg-2 lg-1 mb-4">
+          <div v-for="(book, i) in bookFiltered" :key="i" class="col mb-4">
             <div class="card rounded-4">
               <img :src="book.cover_buku" class="card-img-top rounded mx-auto" alt="..." />
               <NuxtLink :to="`/buku/${book.id}`" style="text-decoration:none">  
@@ -91,12 +91,11 @@ onMounted(() => {
 
 </script>
 <style scoped>
-/* @media (min-width: 990px) { 
-  .card{
-
+/* @media only screen and ( max-width : 600px ){
+  .row.lay{
+    width: 0%;
   }
- } */
-
+} */
 .text-center {
   font-family: "League Spartan", sans-serif;
   font-size: 190%;
@@ -134,7 +133,6 @@ onMounted(() => {
 }
 .card-img-top {
   width: 80%;
-  height: 100%;
   object-fit: cover;
   object-position: 0 30;
   padding-top: 5%;

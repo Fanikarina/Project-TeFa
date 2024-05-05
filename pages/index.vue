@@ -24,27 +24,53 @@
             </div>
         </div>
         <div class="row pb-5 justify-content-center">
-            <div class="col-lg-4 col-6">
+            <form @submit.prevent="getPengunjung" class="col-lg-4 col-6">
                 <nuxt-link to="/pengunjung" style="text-decoration:none">
                     <div class="card bg-riwayat rounded-5 mb-4">
                         <div class="card-body text-dark mt-5">
-                            <h3>3 Pengunjung</h3>
+                            <h3>{{ visitors?.length }} Pengunjung</h3>
                         </div>
                     </div>
                 </nuxt-link>
-            </div>
-            <div class="col-lg-4 col-6">
+            </form>
+            <form @submit.prevent="getBooks" class="col-lg-4 col-6">
                 <nuxt-link to="/buku" style="text-decoration:none">
                     <div class="card buku rounded-5">
                         <div class="card-body text-dark mt-5">
-                            <h3>2 Buku</h3>
+                            <h3>{{ books?.length }} Buku</h3>
                         </div>
                     </div>
                 </nuxt-link>
-            </div>
+            </form>
         </div>
     </div>
 </template>
+<script setup>
+const supabase = useSupabaseClient();
+
+const books = ref([])
+const visitors = ref([])
+const keyword = ref('')
+
+
+const getBooks = async () => {
+  const { data, error } = await supabase.from("buku").select(`*,kategori(*)`).ilike("judul", `%${keyword.value}`)
+  if (data) {
+    books.value = data;
+  }
+};
+
+const getPengunjung = async () => {
+    const { data, error } = await supabase.from('pengunjung')
+    .select(`*,keanggotaan(*),keperluan(*)`).ilike("nama", `%${keyword.value}`)
+    if (data) visitors.value = data
+}
+
+onMounted(()=>{
+    getBooks()
+    getPengunjung()
+})
+</script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');

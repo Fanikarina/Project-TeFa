@@ -29,7 +29,7 @@
                         aria-label="" />
                 </div>
             </div>
-            <div class="my-3" style="font-size: medium;">Menampilkan {{ buku.length }} dari {{ buku.length }}</div>
+            <div class="my-3" style="font-size: medium;">Menampilkan {{ getBookById.length }} dari {{ getBookById.length }}</div>
             <div class="layer">
                 <div class="card">
                     <img :src="buku.cover_buku" class="cover" alt="cover buku">
@@ -135,7 +135,7 @@ onMounted(() => {
 }
 
 .my-3 {
-    padding-right: 75%;
+    padding-right: 85%;
     padding-top: 3%;
     color: white;
 }
