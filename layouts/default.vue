@@ -1,20 +1,20 @@
 <template>
-    <div class="container-fluid">
-        <Header />
-    
-        <slot />
-    </div>
+  <div class="container-fluid">
+    <Header />
+
+    <slot />
+  </div>
 </template>
 
 <style>
 .spartan {
-    font-family:League Spartan;
+  font-family: League Spartan;
 }
-.container-fluid{
-    background-color: #6278B1;
+.container-fluid {
+  background-color: #6278b1;
 }
 
 .bg-primary {
-    background-color: #3B4B77 !important;
+  background-color: #3b4b77 !important;
 }
 </style>

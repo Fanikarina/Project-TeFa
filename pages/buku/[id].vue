@@ -19,17 +19,14 @@
                 <div class="col-sm-2 mb-2">
                     <select class="form-select" aria-label="Default select example"
                         style="box-shadow: 2px 2px 2px #424242;">
-                        <option value="">Kategori buku</option>
-                        <option v-for="(kategori, i) in kategories" :key="i" :value="kategori.nama">{{ kategori.nama }}
-                        </option>
+                        <option >{{ buku.kategori_buku?.nama }}</option>
                     </select>
                 </div>
                 <div class="col-sm-8">
-                    <input type="text" style="box-shadow: 2px 2px 2px #424242;" class="form-control" placeholder=""
-                        aria-label="" />
+                    <input v-model="buku.judul" readonly type="text" style="box-shadow: 2px 2px 2px #424242;" class="form-control" placeholder="" aria-label=""/>
                 </div>
             </div>
-            <div class="my-3" style="font-size: medium;">Menampilkan {{ getBookById.length }} dari {{ getBookById.length }}</div>
+            <!-- <div class="my-3" style="font-size: medium;">Menampilkan {{ getBookById.length }} dari {{ getBookById.length }}</div> -->
             <div class="layer">
                 <div class="card">
                     <img :src="buku.cover_buku" class="cover" alt="cover buku">

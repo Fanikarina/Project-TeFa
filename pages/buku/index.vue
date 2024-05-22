@@ -20,7 +20,7 @@
                 <option v-for="(kategori,i) in kategories" :key="i" :value="kategori.nama">{{ kategori.nama }}</option>
               </select>
             </div>
-            <form @submit.prevent="getBooks" class="col-sm-8 mb-3">
+            <form @submit.prevent="getBooks" class="col mb-3">
               <div class="input-group flex-nowrap rounded" style="box-shadow: 2px 2px 2px #424242">
                 <input v-model="keyword" type="search" class="form-control" placeholder="Cari..." aria-label="Search" />
                 <span class="input-group-text">
@@ -31,7 +31,7 @@
           </div>
         </div>
       </div>
-      <div class="pt-5 ms-4 text-white" style="font-size: medium">Menampilkan {{ books.length }} dari {{ books.length }} buku</div>
+      <div class="pt-5 ms-4 text-white" style="font-size: medium">Menampilkan {{ bookFiltered.length }} dari {{ jumlahbk }} buku</div>
       <div class="layer3 p-4">
         <div class="row buku">
           <div v-for="(book, i) in bookFiltered" :key="i" class="col mb-4">
@@ -54,11 +54,11 @@ const supabase = useSupabaseClient();
 
 const kategories=ref([])
 const keyword = ref('')
-
 const books = ref([]);
+const jumlahbk=ref(0)
 
 const getBooks = async () => {
-  const { data, error } = await supabase.from("buku").select(`*,kategori(*)`).ilike("judul", `%${keyword.value}`)
+  const { data, error } = await supabase.from("buku").select(`*,kategori(*)`).ilike("judul", `%${keyword.value}%`)
   if (data) {
     books.value = data;
     data.forEach(book => {
@@ -84,9 +84,17 @@ const bookFiltered = computed (() =>{
     })
 })
 
+const getJumlahbk = async () =>{
+  const{ data, count } = await supabase
+  .from("buku") 
+  .select('*', { count: "exact" })
+  if(data) jumlahbk.value = count
+}
+
 onMounted(() => {
   getBooks();
   getKategori();
+  getJumlahbk();
 })
 
 </script>

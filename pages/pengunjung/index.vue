@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <div class="my-3 ps-2 text-white pt-5"  style="font-size: medium;">Menampilkan {{ visitors.length }} dari {{ visitors.length }}</div>
+        <div class="my-3 ps-2 text-white pt-5"  style="font-size: medium;">Menampilkan {{ visitors.length }} dari {{ jmlpengunjung }}</div>
         <div class="table-responsive">
             <table class="table table-bordered text-white text-center " style="font-size: medium;">
                 <thead>
@@ -59,15 +59,26 @@ const supabase= useSupabaseClient()
 const visitors = ref([])
 // const vivitor = ref([])
 const keyword = ref('')
+const jmlpengunjung= ref(0) 
 
 const getPengunjung = async () => {
     const { data, error } = await supabase.from('pengunjung')
-    .select(`*,keanggotaan(*),keperluan(*)`).ilike("nama", `%${keyword.value}`)
+    .select(`*,keanggotaan(*),keperluan(*)`)
+    .order('id', {ascending : false})
+    .ilike("nama", `%${keyword.value}%`)
     if (data) visitors.value = data
+}
+
+const getJmlpengunjung = async () =>{
+  const{ data, count } = await supabase
+  .from("pengunjung") 
+  .select('*', { count: "exact" })
+  if(data) jmlpengunjung.value = count
 }
 
 onMounted(() => {
     getPengunjung()
+    getJmlpengunjung()
 })
 </script>
 
