@@ -57,7 +57,6 @@
 const supabase= useSupabaseClient()
 
 const visitors = ref([])
-// const vivitor = ref([])
 const keyword = ref('')
 const jmlpengunjung= ref(0) 
 

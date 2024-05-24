@@ -94,20 +94,6 @@ h2{
     color: white;
     text-align: center;
 }
-/* .text-center{
-    color: black;
-    text-align: center;
-    margin-top: -27%;
-} */
-/* .transparan {
-    background-color: rgba(255, 255, 255, 0.652);
-    border-radius: 30px;
-    box-shadow: 1px 1px 10px #424242;
-} */
-/* .bg{
-    height: 200px;
-    box-shadow: 1px 1px 10px #424242;
-} */
 .card{
     align-items: center;
     height: 180px;
@@ -118,23 +104,18 @@ h2{
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    /* opacity:0.2 ; */
 }
-
 .card.bg-buku{
     background: url('../assets/img/cariBuku.png') no-repeat center center;
     background-size: cover;
-    /* opacity: 0.2; */
 }
 .card.bg-riwayat{
     background: url('../assets/img/riwayat.png') no-repeat center center;
     background-size: cover;
-    /* opacity: 0.3;    */
 }
 .card.buku{
     background: url('../assets//img/bukuu.png') no-repeat center center;
     background-size: cover;
-    /* opacity: 0.3;    */
 }
 
 </style>
