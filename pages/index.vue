@@ -88,8 +88,7 @@ onMounted(()=>{
     background-color: #6278B1;
 }
 h2{
-    padding-top: 6%;
-    padding-bottom: 4%;
+    padding-top: 5%;
     font-family: "League Spartan", sans-serif;
     color: white;
     text-align: center;
