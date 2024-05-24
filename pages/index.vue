@@ -1,12 +1,12 @@
 <template>
     <div class="container-fluid">
-        <div class="text-center">
+        <div class="text-center pb-3">
             <h2>SELAMAT DATANG . . .</h2>
         </div>
         <div class="row my-4 justify-content-center">
             <div class="col-lg-4 col-6" >
                 <nuxt-link to="/pengunjung/tambah" style="text-decoration:none">
-                    <div class="card bg-pengunjung rounded-5 mb-4">
+                    <div class="card pengunjung rounded-5 mb-4">
                         <div class="card-body text-dark mt-5">
                             <h3>Kunjungan</h3> 
                         </div>
@@ -26,7 +26,7 @@
         <div class="row pb-5 justify-content-center">
             <form @submit.prevent="getPengunjung" class="col-lg-4 col-6">
                 <nuxt-link to="/pengunjung" style="text-decoration:none">
-                    <div class="card bg-riwayat rounded-5 mb-4">
+                    <div class="card riwayat rounded-5 mb-4">
                         <div class="card-body text-dark mt-5">
                             <h3>{{ visitors?.length }} Pengunjung</h3>
                         </div>
@@ -84,21 +84,19 @@ onMounted(()=>{
         font-size: large;
     }
 }
-.container-fluid{
-    background-color: #6278B1;
-}
 h2{
     padding-top: 5%;
     font-family: "League Spartan", sans-serif;
     color: white;
     text-align: center;
+    text-shadow: 1px 1px 10px #424242;
 }
 .card{
     align-items: center;
     height: 180px;
     box-shadow: 1px 1px 10px #424242;
 }
-.card.bg-pengunjung{
+.card.pengunjung{
     background-image: url('../assets/img/kunjungan.png');
     background-repeat: no-repeat;
     background-position: center center;
@@ -108,7 +106,7 @@ h2{
     background: url('../assets/img/cariBuku.png') no-repeat center center;
     background-size: cover;
 }
-.card.bg-riwayat{
+.card.riwayat{
     background: url('../assets/img/riwayat.png') no-repeat center center;
     background-size: cover;
 }
