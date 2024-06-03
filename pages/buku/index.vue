@@ -93,11 +93,6 @@ onMounted(() => {
 });
 </script>
 <style scoped>
-/* @media only screen and ( max-width : 600px ){
-  .row.lay{
-    width: 0%;
-  }
-} */
 .text-center {
   font-family: "League Spartan", sans-serif;
   font-size: 190%;

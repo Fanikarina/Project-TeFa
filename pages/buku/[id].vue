@@ -26,7 +26,6 @@
                     <input v-model="buku.judul" readonly type="text" style="box-shadow: 2px 2px 2px #424242;" class="form-control" placeholder="" aria-label=""/>
                 </div>
             </div>
-            <!-- <div class="my-3" style="font-size: medium;">Menampilkan {{ getBookById.length }} dari {{ getBookById.length }}</div> -->
             <div class="layer">
                 <div class="card">
                     <img :src="buku.cover_buku" class="cover" alt="cover buku">
@@ -107,7 +106,6 @@ onMounted(() => {
     .card-img-top {
         object-fit: cover;
         object-position: 0 30;
-        /* padding-top: 5%; */
     }
 
     .layer2 {
@@ -166,7 +164,6 @@ onMounted(() => {
 .card-img-top {
     object-fit: cover;
     object-position: 0 30;
-    /* padding-top: 5%; */
     margin: auto;
 }
 
