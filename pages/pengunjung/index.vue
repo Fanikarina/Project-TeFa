@@ -69,10 +69,10 @@ const getPengunjung = async () => {
 }
 
 const getJmlpengunjung = async () =>{
-  const{ data, count } = await supabase
-  .from("pengunjung") 
-  .select('*', { count: "exact" })
-  if(data) jmlpengunjung.value = count
+    const{ data, count } = await supabase
+    .from("pengunjung") 
+    .select('*', { count: "exact" })
+    if(data) jmlpengunjung.value = count
 }
 
 const pengunjungFiltered = computed (() =>{
