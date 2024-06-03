@@ -83,6 +83,7 @@ onMounted(()=>{
     }
     h3{
         font-size: large;
+        padding-top: 10%;
     }
 }
 .container-fluid{
