@@ -17,7 +17,7 @@
             <div class="col-sm-3 mb-2">
               <select v-model="keyword" class="form-select" aria-label="Default select example" style="box-shadow: 2px 2px 2px #424242">
                 <option value="">Kategori buku</option>
-                <option v-for="(kategori,i) in kategories" :key="i" :value="kategori.nama">{{ kategori.nama }}</option>
+                <option v-for="(kategori, i) in kategories" :key="i" :value="kategori.nama">{{ kategori.nama }}</option>
               </select>
             </div>
             <form @submit.prevent="getBooks" class="col mb-3">
@@ -37,7 +37,7 @@
           <div v-for="(book, i) in bookFiltered" :key="i" class="col mb-4">
             <div class="card rounded-4">
               <img :src="book.cover_buku" class="card-img-top rounded mx-auto" alt="..." />
-              <NuxtLink :to="`/buku/${book.id}`" style="text-decoration:none">  
+              <NuxtLink :to="`/buku/${book.id}`" style="text-decoration: none">
                 <div class="card-body p-0">
                   <a href="#" class="btn d-flex justify-content-center">Lihat detail</a>
                 </div>
@@ -52,53 +52,52 @@
 <script setup>
 const supabase = useSupabaseClient();
 
-const kategories=ref([])
-const keyword = ref('')
+const kategories = ref([]);
+const keyword = ref("");
 const books = ref([]);
-const jumlahbk=ref(0)
+const jumlahbk = ref(0);
 
 const getBooks = async () => {
-  const { data, error } = await supabase.from("buku").select(`*,kategori(*)`).ilike("judul", `%${keyword.value}%`)
+  const { data, error } = await supabase.from("buku").select(`*,kategori(*)`).ilike("judul", `%${keyword.value}%`);
   if (data) {
     books.value = data;
-    data.forEach(book => {
-      const { data } = supabase.storage.from('coverBuku').getPublicUrl(book.cover_buku)
+    data.forEach((book) => {
+      const { data } = supabase.storage.from("coverBuku").getPublicUrl(book.cover_buku);
       if (data) {
-        book.cover_buku = data.publicUrl
+        book.cover_buku = data.publicUrl;
       }
-    })
+    });
   }
 };
 
-const getKategori = async () =>{
-    const { data, error } = await supabase.from('kategori_buku').select('*')
-    if (data) kategories.value = data
-}
+const getKategori = async () => {
+  const { data, error } = await supabase.from("kategori_buku").select("*");
+  if (data) kategories.value = data;
+};
 
-const bookFiltered = computed (() =>{
-    return books.value.filter((b) =>{
-        return (
-            b.judul?.toLowerCase().includes(keyword.value?.toLowerCase()) || 
-            b.kategori?.nama.toLowerCase().includes(keyword.value?.toLowerCase())
-        )
-    })
-})
+const bookFiltered = computed(() => {
+  return books.value.filter((b) => {
+    return b.judul?.toLowerCase().includes(keyword.value?.toLowerCase()) || b.kategori?.nama.toLowerCase().includes(keyword.value?.toLowerCase());
+  });
+});
 
-const getJumlahbk = async () =>{
-  const{ data, count } = await supabase
-  .from("buku") 
-  .select('*', { count: "exact" })
-  if(data) jumlahbk.value = count
-}
+const getJumlahbk = async () => {
+  const { data, count } = await supabase.from("buku").select("*", { count: "exact" });
+  if (data) jumlahbk.value = count;
+};
 
 onMounted(() => {
   getBooks();
   getKategori();
   getJumlahbk();
-})
-
+});
 </script>
 <style scoped>
+/* @media only screen and ( max-width : 600px ){
+  .row.lay{
+    width: 0%;
+  }
+} */
 .text-center {
   font-family: "League Spartan", sans-serif;
   font-size: 190%;
@@ -116,20 +115,20 @@ onMounted(() => {
 }
 .layer2 {
   width: 80%;
-  margin:auto;
+  margin: auto;
   padding: 0;
 }
 .layer3 {
   background-color: #cbd2e5;
   border-radius: 25px;
-  margin:auto;
+  margin: auto;
   box-shadow: 2px 2px 2px #424242;
 }
 .buku {
   border-radius: 50px;
   object-fit: cover;
 }
-.card{
+.card {
   height: 250px;
   width: 170px;
   margin: auto;
@@ -139,10 +138,9 @@ onMounted(() => {
   object-fit: cover;
   object-position: 0 30;
   padding-top: 5%;
-  margin:auto;
+  margin: auto;
 }
 .btn {
   font-size: 50%;
 }
-
 </style>

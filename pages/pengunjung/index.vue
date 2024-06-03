@@ -38,9 +38,9 @@
                         <td>WAKTU</td>
                         <td>KEPERLUAN</td>
                     </tr>
-                </thead>
+                </thead> 
                 <tbody>
-                    <tr v-for="(visitor,i) in visitors" :key="i" >
+                    <tr v-for="(visitor,i) in pengunjungFiltered" :key="i" >
                         <th>{{ i+1 }}</th>
                         <td>{{ visitor.nama }}</td>
                         <td>{{ visitor.keanggotaan.nama }}</td>
@@ -74,6 +74,15 @@ const getJmlpengunjung = async () =>{
   .select('*', { count: "exact" })
   if(data) jmlpengunjung.value = count
 }
+
+const pengunjungFiltered = computed (() =>{
+    return visitors.value.filter((b) =>{
+        return (
+            b.nama?.toLowerCase().includes(keyword.value?.toLowerCase()) || 
+            b.keanggotaan?.nama.toLowerCase().includes(keyword.value?.toLowerCase())
+        )
+    })
+})
 
 onMounted(() => {
     getPengunjung()

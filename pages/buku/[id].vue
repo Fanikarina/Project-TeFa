@@ -26,6 +26,7 @@
                     <input v-model="buku.judul" readonly type="text" style="box-shadow: 2px 2px 2px #424242;" class="form-control" placeholder="" aria-label=""/>
                 </div>
             </div>
+            <!-- <div class="my-3" style="font-size: medium;">Menampilkan {{ getBookById.length }} dari {{ getBookById.length }}</div> -->
             <div class="layer">
                 <div class="card">
                     <img :src="buku.cover_buku" class="cover" alt="cover buku">
@@ -89,21 +90,26 @@ onMounted(() => {
         width: 100%;
         box-shadow: 2px 2px 2px #727272;
     }
+
     .row.buku {
         padding-top: 2%;
         margin-left: 2%;
         border-radius: 50px;
 
     }
+
     .card {
         box-shadow: 1px 1px 1px #424242;
         margin-bottom: 2rem;
         margin: auto;
     }
+
     .card-img-top {
         object-fit: cover;
         object-position: 0 30;
+        /* padding-top: 5%; */
     }
+
     .layer2 {
         background-color: #ffffff;
         border-radius: 25px;
@@ -112,20 +118,25 @@ onMounted(() => {
         box-shadow: 1px 1px 1px #424242;
     }
 }
+
+
 .text-center {
     font-family: "League Spartan", sans-serif;
     font-size: 190%;
 }
+
 .content {
     font-family: "League Spartan", sans-serif;
     font-size: 190%;
     text-align: center;
 }
+
 .my-3 {
     padding-right: 85%;
     padding-top: 3%;
     color: white;
 }
+
 .layer {
     display: flex;
     justify-content: center;
@@ -138,21 +149,27 @@ onMounted(() => {
     border-radius: 25px;
     box-shadow: 2px 2px 2px #727272;
 }
+
 .row.buku {
     padding-top: 2%;
     margin-left: 2%;
     border-radius: 50px;
+
 }
+
 .card {
     box-shadow: 1px 1px 1px #424242;
     margin-bottom: 2rem;
     padding: 10px;
 }
+
 .card-img-top {
     object-fit: cover;
     object-position: 0 30;
+    /* padding-top: 5%; */
     margin: auto;
 }
+
 .layer2 {
     background-color: #ffffff;
     border-radius: 25px;
@@ -160,13 +177,16 @@ onMounted(() => {
     margin-bottom: 2%;
     box-shadow: 1px 1px 1px #424242;
 }
+
 .text.text-center {
     padding-top: 3%;
     font-family: "League Spartan", sans-serif;
     font-size: 65%;
     color: rgb(0, 0, 0);
     text-align: center;
+
 }
+
 .sinopsis {
     font-family: "League Spartan", sans-serif;
     font-size: 50%;
@@ -174,9 +194,11 @@ onMounted(() => {
     text-align: left;
     margin-left: 5%;
 }
+
 .keterangan {
     margin: auto;
 }
+
 .button {
     font-size: medium;
     background-color: white;
