@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid">
         <div class="text-center">
-            <h2 class="text">SELAMAT DATANG . . .</h2>
+            <h2>SELAMAT DATANG . . .</h2>
         </div>
         <div class="row my-4 justify-content-center">
             <div class="col-lg-4 col-6" >
@@ -78,8 +78,8 @@ onMounted(()=>{
     .card{
         height: 50px;
     }
-    .text{
-        font-size: large;
+    h2{
+        font-size: larger;
     }
     h3{
         font-size: large;
@@ -89,8 +89,8 @@ onMounted(()=>{
 .container-fluid{
     background-color: #6278B1;
 }
-.text{
-    padding-top: 5%;
+h2{
+    padding-top: 2%;
     font-family: "League Spartan", sans-serif;
     color: white;
     text-align: center;
