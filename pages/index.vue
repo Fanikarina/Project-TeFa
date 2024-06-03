@@ -80,6 +80,7 @@ onMounted(()=>{
     }
     h2{
         font-size: larger;
+        margin-top: 5%;
     }
     h3{
         font-size: large;
