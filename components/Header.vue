@@ -4,7 +4,7 @@
             <img src="~/assets/img/logo-smkn4.png" alt="logo SMKN 4" />     
         </div>
         <div class="col-md text-white spartan" style="">
-            <h2>PERPUSTAKAAN DIGITAL</h2>
+            <h1>PERPUSTAKAAN DIGITAL</h1>
         </div>
     </div>
 </template>
@@ -14,21 +14,23 @@
 img{
     width: 80px;
 }
+h1{
+    padding-top: 1%;
+}
 
 @media only screen and (max-width: 600px){
     .row{
         text-align: center;
     }
     img{
-        width: 20px;
+        width: 50px;
     }
-    h2{
-        font-size: large;
+    h1{
         padding-top: 5%
     }
 }
 @media only screen and (min-width:600px) and (max-width:900px){
-    h2{
+    h1{
         margin-left: 5%;
     }
     
