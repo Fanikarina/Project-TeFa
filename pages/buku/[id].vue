@@ -26,7 +26,7 @@
                     <input v-model="buku.judul" readonly type="text" style="box-shadow: 2px 2px 2px #424242;" class="form-control" placeholder="" aria-label=""/>
                 </div>
             </div>
-            <div class="layer">
+            <div class="layer mt-5">
                 <div class="card">
                     <img :src="buku.cover_buku" class="cover" alt="cover buku">
                 </div>
