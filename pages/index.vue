@@ -74,9 +74,9 @@ onMounted(()=>{
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
-@media screen and (max-width:728px) {
+@media screen and (max-width:600px) {
     .card{
-        height: 50px;
+        height: 40px;
     }
     h2{
         font-size: larger;
@@ -84,7 +84,7 @@ onMounted(()=>{
     }
     h3{
         font-size: large;
-        padding-top: 10%;
+        padding-top: 12%;
     }
 }
 .container-fluid{
