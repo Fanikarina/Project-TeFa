@@ -95,6 +95,7 @@ h2{
     font-family: "League Spartan", sans-serif;
     color: white;
     text-align: center;
+    text-shadow: 1px 1px 5px black;
 }
 
 .card{
@@ -103,22 +104,22 @@ h2{
     box-shadow: 1px 1px 10px #424242;
 }
 .card.bg-pengunjung{
-    background-image: url('../assets/img/kunjungan.png');
+    background-image: url('../assets/img/kunjungan.webp');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
 }
 
 .card.bg-buku{
-    background: url('../assets/img/cariBuku.png') no-repeat center center;
+    background: url('../assets/img/cariBuku.webp') no-repeat center center;
     background-size: cover;
 }
 .card.bg-riwayat{
-    background: url('../assets/img/riwayat.png') no-repeat center center;
+    background: url('../assets/img/riwayat.webp') no-repeat center center;
     background-size: cover;
 }
 .card.buku{
-    background: url('../assets//img/bukuu.png') no-repeat center center;
+    background: url('../assets//img/bukuu.webp') no-repeat center center;
     background-size: cover;
 }
 
