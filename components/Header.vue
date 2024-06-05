@@ -1,7 +1,7 @@
 <template>
     <div class="row p-3 bg-primary text-white d-flex align-items-center sticky-top">
         <div class="col-md-1">
-            <img src="~/assets/img/logo-smkn4.png" alt="logo SMKN 4" />     
+            <img src="~/assets/img/logo-smkn4.webp" alt="logo SMKN 4" />     
         </div>
         <div class="col-md text-white spartan" style="">
             <h1>PERPUSTAKAAN DIGITAL</h1>
