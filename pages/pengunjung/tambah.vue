@@ -116,7 +116,7 @@ onMounted(() =>{
 <style scoped>
 .content{
     background-color: #6278B1;
-    height: 100vh;
+    height: 90vh;
 }
 @media only screen and (min-width:900px){
     .layer{
