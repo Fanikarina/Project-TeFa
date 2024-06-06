@@ -10,13 +10,14 @@
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
 img{
     width: 80px;
 }
 h1{
     padding-top: 1%;
+    font-family: "League Spartan", sans-serif;
 }
+
 
 @media only screen and (max-width: 600px){
     .row{
