@@ -1,9 +1,9 @@
 <template>
-  <div class="container-fluid">
+  <!-- <div class="container-fluid"> -->
     <Header />
 
     <slot />
-  </div>
+  <!-- </div> -->
 </template>
 
 <style scoped>

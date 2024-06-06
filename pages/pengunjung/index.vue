@@ -17,7 +17,7 @@
                     </div>
                     <form @submit.prevent="getPengunjung" class="col-10 ps-5 mb-2">
                         <div class="input-group flex-nowrap rounded" style="box-shadow: 2px 2px 2px #424242">
-                            <input v-model="keyword" type="search" class="form-control" placeholder="Cari..." aria-label="Search" />
+                            <input v-model="keyword" type="search" class="form-control" placeholder="Cari berdasarkan nama dan kategori..." aria-label="Search" />
                             <span class="input-group-text">
                                 <i class="bi bi-search"></i>
                             </span>

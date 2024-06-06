@@ -1,49 +1,53 @@
 <template>
-    <div class="container-fluid">
-        <div class="text-center">
-            <h2>SELAMAT DATANG . . .</h2>
-        </div>
-        <div class="row my-4 justify-content-center">
-            <div class="col-lg-4 col-6" >
-                <nuxt-link to="/pengunjung/tambah" style="text-decoration:none">
-                    <div class="card bg-pengunjung rounded-5 mb-4">
-                        <div class="card-body text-dark mt-5">
-                            <h3>Kunjungan</h3> 
-                        </div>
-                    </div> 
-                </nuxt-link> 
+    <div class="content">
+        <div class="container-fluid">      
+            <div class="text-center">
+                <h2>SELAMAT DATANG . . .</h2>
             </div>
-            <div class="col-lg-4 col-6" >
-                <nuxt-link to="buku" style="text-decoration:none">
-                    <div class="card bg-buku rounded-5 ">
-                        <div class="card-body text-dark mt-5">
-                            <h3>Cari buku</h3>
+            <div class="row py-5">    
+                <div class="row my-4 justify-content-center">
+                <div class="col-lg-4 col-6" >
+                    <nuxt-link to="/pengunjung/tambah" style="text-decoration:none">
+                        <div class="card bg-pengunjung rounded-5 mb-4">
+                            <div class="card-body text-dark mt-5">
+                                <h3>Kunjungan</h3> 
+                            </div>
+                        </div> 
+                    </nuxt-link> 
+                </div>
+                <div class="col-lg-4 col-6" >
+                    <nuxt-link to="buku" style="text-decoration:none">
+                        <div class="card bg-buku rounded-5 ">
+                            <div class="card-body text-dark mt-5">
+                                <h3>Cari buku</h3>
+                            </div>
                         </div>
-                    </div>
-                </nuxt-link>
+                    </nuxt-link>
+                </div>
             </div>
-        </div>
-        <div class="row pb-5 justify-content-center">
-            <form @submit.prevent="getPengunjung" class="col-lg-4 col-6">
-                <nuxt-link to="/pengunjung" style="text-decoration:none">
-                    <div class="card bg-riwayat rounded-5 mb-4">
-                        <div class="card-body text-dark mt-5">
-                            <h3>{{ visitors?.length }} Pengunjung</h3>
+            <div class="row justify-content-center">
+                <form @submit.prevent="getPengunjung" class="col-lg-4 col-6">
+                    <nuxt-link to="/pengunjung" style="text-decoration:none">
+                        <div class="card bg-riwayat rounded-5">
+                            <div class="card-body text-dark mt-5">
+                                <h3>{{ visitors?.length }} Pengunjung</h3>
+                            </div>
                         </div>
-                    </div>
-                </nuxt-link>
-            </form>
-            <form @submit.prevent="getBooks" class="col-lg-4 col-6">
-                <nuxt-link to="/buku" style="text-decoration:none">
-                    <div class="card buku rounded-5">
-                        <div class="card-body text-dark mt-5">
-                            <h3>{{ books?.length }} Buku</h3>
+                    </nuxt-link>
+                </form>
+                <form @submit.prevent="getBooks" class="col-lg-4 col-6">
+                    <nuxt-link to="/buku" style="text-decoration:none">
+                        <div class="card buku rounded-5">
+                            <div class="card-body text-dark mt-5">
+                                <h3>{{ books?.length }} Buku</h3>
+                            </div>
                         </div>
-                    </div>
-                </nuxt-link>
-            </form>
+                    </nuxt-link>
+                </form>
+            </div>
         </div>
     </div>
+</div>
 </template>
 <script setup>
 const supabase = useSupabaseClient();
@@ -79,14 +83,14 @@ onMounted(()=>{
     }
     h2{
         font-size: larger;
-        margin-top: 5%;
+        /* margin-top: 5%; */
     }
     h3{
         font-size: large;
         padding-top: 12%;
     }
 }
-.container-fluid{
+.content{
     background-color: #6278B1;
 }
 h2{

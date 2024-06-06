@@ -1,5 +1,5 @@
 <template>
-    <div class="row p-3 bg-primary text-white d-flex align-items-center sticky-top">
+    <div class="row p-3 bg-primary text-white d-flex align-items-center sticky-top" style="width: 100%; left: 0; right: 0;">
         <div class="col-md-1">
             <img src="~/assets/img/logo-smkn4.webp" alt="logo SMKN 4" />     
         </div>
