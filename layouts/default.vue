@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .spartan {
   font-family: League Spartan;
 }
@@ -16,5 +16,12 @@
 
 .bg-primary {
   background-color: #3b4b77 !important;
+}
+@media only screen and (max-width : 600px) {
+  .container-fluid{
+    background-color: #6278b1;
+    height: 100vh;
+    width: 100%;
+  }
 }
 </style>
