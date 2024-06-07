@@ -37,7 +37,7 @@
                         <p>Penulis : {{ buku.penulis }}</p>
                         <p>Penerbit : {{ buku.penerbit }}</p>
                         <p>Tahun terbit : {{ buku.tahun_terbit }}</p>
-                        <p>Deskripsi buku : {{ buku.sinopsis }}</p>
+                        <p>Sinopsis : {{ buku.sinopsis }}</p>
                         <p>Kategori : {{ buku.kategori_buku?.nama }}</p>
                         <p>Rak : {{ buku.rak }}</p>
                     </div>
