@@ -6,18 +6,18 @@
         <div class="row m-0 text-white">
             <div class="layer pt2">
                 <div class="row">
-                    <div class="col-lg-1 col-4">
+                    <div class="col-lg-1 col-md-2 col-sm-3 col-3 p-0">
                         <div class="icon1">
                             <NuxtLink to="/" style="color:white !important">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="40" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="90" height="40" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
                                 </svg>
                             </NuxtLink>
                         </div>
                     </div>
-                    <form @submit.prevent="getPengunjung" class="col-10 ps-5 mb-2">
+                    <form @submit.prevent="getPengunjung" class="col-lg-10 col-md-9 col-sm-8 col-9">
                         <div class="input-group flex-nowrap rounded" style="box-shadow: 2px 2px 2px #424242">
-                            <input v-model="keyword" type="search" class="form-control" placeholder="Cari..." aria-label="Search" />
+                            <input v-model="keyword" type="search" class="form-control" placeholder="Cari berdasarkan nama dan kategori..." aria-label="Search" />
                             <span class="input-group-text">
                                 <i class="bi bi-search"></i>
                             </span>
@@ -26,7 +26,9 @@
                 </div>
             </div>
         </div>
-        <div class="my-3 ps-2 text-white pt-5"  style="font-size: medium;">Menampilkan {{ visitors.length }} dari {{ jmlpengunjung }}</div>
+        <div class="tampil">
+            <div class="my-3 text-white pt-4" style="font-size: medium;">Menampilkan {{ visitors.length }} dari {{ jmlpengunjung }} </div>
+        </div>
         <div class="table-responsive">
             <table class="table table-bordered text-white text-center " style="font-size: medium;">
                 <thead>
@@ -91,7 +93,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-
 .text-center{
     font-family: "League Spartan", sans-serif;
     font-size: 190%;
@@ -105,7 +106,12 @@ onMounted(() => {
     margin-left: 5%;
     padding: 0;
 }
+.tampil{
+    margin-left: 8%;
+}
 .table{
+    width: 85%;
+    margin: auto;
     padding: 0;
 }
 .form-control {
