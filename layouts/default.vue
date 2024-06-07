@@ -7,7 +7,7 @@
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400&display=swap');
 .spartan {
   font-family: League Spartan;
 }

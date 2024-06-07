@@ -4,7 +4,7 @@
             <img src="~/assets/img/logo-smkn4.webp" alt="logo SMKN 4" />     
         </div>
         <div class="col-md text-white spartan" style="">
-            <h1>PERPUSTAKAAN DIGITAL</h1>
+            <h1 class="fw-bold">PERPUSTAKAAN DIGITAL</h1>
         </div>
     </div>
 </template>

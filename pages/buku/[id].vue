@@ -33,13 +33,13 @@
                 <div class="layer2">
                     <h2 class="text text-center">Detail buku</h2>
                     <div class="sinopsis">
-                        <p>Judul : {{ buku.judul }}</p>
-                        <p>Penulis : {{ buku.penulis }}</p>
-                        <p>Penerbit : {{ buku.penerbit }}</p>
-                        <p>Tahun terbit : {{ buku.tahun_terbit }}</p>
-                        <p>Deskripsi buku : {{ buku.sinopsis }}</p>
-                        <p>Kategori : {{ buku.kategori_buku?.nama }}</p>
-                        <p>Rak : {{ buku.rak }}</p>
+                        <h6 class="d-flex"><p class="fw-bold">Judul : </p>  {{ buku.judul }} </h6>
+                        <h6 class="d-flex"> <p class="fw-bold">Penulis : </p> {{ buku.penulis }}</h6>
+                        <h6 class="d-flex"> <p class="fw-bold">Penerbit :  </p> {{ buku.penerbit }}</h6>
+                        <h6 class="d-flex"> <p class="fw-bold">Tahun terbit : </p>{{ buku.tahun_terbit }}</h6>
+                        <h6 class="d-flex"> <p class="fw-bold">Deskripsi buku : </p>{{ buku.sinopsis }}</h6>
+                        <h6 class="d-flex"> <p class="fw-bold">Kategori : </p>{{ buku.kategori_buku?.nama }}</h6>
+                        <h6 class="d-flex"> <p class="fw-bold">Rak : </p>{{ buku.rak }}</h6>
                     </div>
                     <NuxtLink to="/buku/">
                         <input type="submit" class="button" value="Tutup">
@@ -99,14 +99,16 @@ onMounted(() => {
 
     .card {
         box-shadow: 1px 1px 1px #424242;
-        margin-bottom: 2rem;
+        margin-bottom: 10%;
         margin: auto;
+        width: 140px;
     }
 
     .card-img-top {
         object-fit: cover;
         object-position: 0 30;
-    }
+
+    } 
 
     .layer2 {
         background-color: #ffffff;
@@ -157,7 +159,6 @@ onMounted(() => {
 
 .card {
     box-shadow: 1px 1px 1px #424242;
-    margin-bottom: 2rem;
     padding: 10px;
 }
 

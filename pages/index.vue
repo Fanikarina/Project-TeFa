@@ -1,5 +1,5 @@
 <template>
-    <div class="content">
+    <div class="content fw-bold">
         <div class="container-fluid">      
             <div class="text-center">
                 <h2>SELAMAT DATANG . . .</h2>

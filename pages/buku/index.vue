@@ -41,7 +41,7 @@
               <img :src="book.cover_buku" class="card-img-top rounded mx-auto" alt="..." />
               <NuxtLink :to="`/buku/${book.id}`" style="text-decoration: none">
                 <div class="card-body p-0">
-                  <a href="#" class="btn d-flex justify-content-center">Lihat detail</a>
+                  <a href="#" class="btn fw-bold d-flex justify-content-center">Lihat detail</a>
                 </div>
               </NuxtLink>
             </div>
