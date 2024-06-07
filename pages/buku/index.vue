@@ -134,7 +134,7 @@ onMounted(() => {
   margin: auto;
 }
 .card-img-top {
-  width: 70%;
+  width: 75%;
   object-fit: cover;
   object-position: 0 30;
   padding-top: 5%;
