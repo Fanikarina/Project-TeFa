@@ -31,7 +31,7 @@
           </div>
         </div>
       </div>
-      <div class="pt-5 ms-4 text-white" style="font-size: medium">Menampilkan {{ bookFiltered.length }} dari {{ jumlahbk }} buku</div>
+      <div class="pt-1 ms-4 text-white" style="font-size: medium">Menampilkan {{ bookFiltered.length }} dari {{ jumlahbk }} buku</div>
       <div class="layer3 p-4">
         <div class="row buku">
           <div v-for="(book, i) in bookFiltered" :key="i" class="col mb-4">
