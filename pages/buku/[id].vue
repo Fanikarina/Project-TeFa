@@ -37,7 +37,7 @@
                         <h6 class="d-flex"> <p class="fw-bold">Penulis : </p> {{ buku.penulis }}</h6>
                         <h6 class="d-flex"> <p class="fw-bold">Penerbit :  </p> {{ buku.penerbit }}</h6>
                         <h6 class="d-flex"> <p class="fw-bold">Tahun terbit : </p>{{ buku.tahun_terbit }}</h6>
-                        <h6 class="d-flex"> <p class="fw-bold">Deskripsi buku : </p>{{ buku.sinopsis }}</h6>
+                        <h6> <p class="fw-bold">Deskripsi buku : </p>{{ buku.sinopsis }}</h6>
                         <h6 class="d-flex"> <p class="fw-bold">Kategori : </p>{{ buku.kategori_buku?.nama }}</h6>
                         <h6 class="d-flex"> <p class="fw-bold">Rak : </p>{{ buku.rak }}</h6>
                     </div>
