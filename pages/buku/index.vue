@@ -31,10 +31,10 @@
           </div>
         </div>
       </div>
-      <div class="pt-1 ms-4 text-white" style="font-size: medium">Menampilkan {{ bookFiltered.length }} dari {{ jumlahbk }} buku</div>
+      <div class="pt-5 ms-4 text-white" style="font-size: medium">Menampilkan {{ bookFiltered.length }} dari {{ jumlahbk }} buku</div>
       <div class="layer3 p-4">
         <div class="row buku">
-          <div v-for="(book, i) in bookFiltered" :key="i" class="col mb-3">
+          <div v-for="(book, i) in bookFiltered" :key="i" class="col mb-4">
             <div class="card rounded-4">
               <img :src="book.cover_buku" class="card-img-top rounded mx-auto" alt="..." />
               <NuxtLink :to="`/buku/${book.id}`" style="text-decoration: none">
@@ -124,12 +124,12 @@ onMounted(() => {
   object-fit: cover;
 }
 .card {
-  height: 200px;
-  width: 140px;
+  height: 250px;
+  width: 170px;
   margin: auto;
 }
 .card-img-top {
-  width: 70%;
+  width: 80%;
   object-fit: cover;
   object-position: 0 30;
   padding-top: 5%;
