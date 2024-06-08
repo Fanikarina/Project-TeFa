@@ -39,12 +39,12 @@
                              </select>
                          </div>
                          <div class="col-sm-4 justify-content-center mb-2">
-                             <select v-model="kelas" class="form-select" aria-label="Disabled select example" style="box-shadow: 2px 2px 2px #424242;" required>
+                             <select v-model="kelas" :disabled="!jurusan || jurusan == 'TOI'" class="form-select" aria-label="Disabled select example" style="box-shadow: 2px 2px 2px #424242;" required>
                                  <option value="" disabled>Kelas</option>
                                  <option value="1">1</option>
                                  <option value="2">2</option>
-                                 <option value="3">3</option>
-                                 <option value="4">4</option>
+                                 <option v-if="!(jurusan == 'DKV')" value="3">3</option>
+                                 <option v-if="!(jurusan == 'DKV')" value="4">4</option>
                              </select>
                          </div>
                      </div>
