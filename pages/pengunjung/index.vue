@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid pb-5" style="background-color:#6278B1">
-        <div class="text-center p-5 text-white">
+        <div class="row text-center p-5 text-white">
             <h2 class="fw-bold">Riwayat kunjungan</h2>
         </div>
         <div class="row m-0 text-white">
@@ -15,8 +15,8 @@
                             </NuxtLink>
                         </div>
                     </div>
-                    <form @submit.prevent="getPengunjung" class="col-lg-10 col-md-9 col-sm-8 col-9">
-                        <div class="input-group flex-nowrap rounded" style="box-shadow: 2px 2px 2px #424242">
+                    <form @submit.prevent="getPengunjung" class="col-lg-11 col-md-9 col-sm-8 col-9">
+                        <div class="input-group rounded" style="box-shadow: 2px 2px 2px #424242">
                             <input v-model="keyword" type="search" class="form-control" placeholder="Cari berdasarkan nama dan kategori..." aria-label="Search" />
                             <span class="input-group-text">
                                 <i class="bi bi-search"></i>
@@ -93,6 +93,9 @@ onMounted(() => {
 </script>
 
 <style scoped>
+/* .container-fluid{
+} */
+
 .text-center{
     font-family: "League Spartan", sans-serif;
     font-size: 100%;
@@ -109,10 +112,18 @@ onMounted(() => {
 .tampil{
     margin-left: 8%;
 }
-.table{
-    width: 85%;
-    margin: auto;
+
+.table-responsive{
+    max-height: 208px;
     padding: 0;
+    /* width: 85%; */
+    margin: 0px 25px;
+    
+}
+.table{
+    /* margin: ; */
+    padding: 0;
+
 }
 .form-control {
     border-right:none;
@@ -120,5 +131,7 @@ onMounted(() => {
 
 thead {
     background-color: #3b4b77bb;
+    position: sticky;
+    top: 0;
 }
 </style>
