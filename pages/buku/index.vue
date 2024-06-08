@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid pb-5" style="background-color: #6278b1">
     <div class="text-center text-white pt-5">
-      <h2>Pencarian buku</h2>
+      <h2 class="fw-bold">Pencarian buku</h2>
     </div>
     <div class="layer pt-3 justify-content-center text-white">
       <div class="row m-0">

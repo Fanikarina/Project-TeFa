@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid pb-5" style="background-color:#6278B1">
         <div class="text-center text-white pt-5">
-            <h2>Pencarian buku</h2>
+            <h2 class="fw-bold">Pencarian buku</h2>
         </div>
         <div class="content text-white pt-3 ">
             <div class="row m-0">
@@ -31,7 +31,7 @@
                     <img :src="buku.cover_buku" class="cover" alt="cover buku">
                 </div>
                 <div class="layer2">
-                    <h2 class="text text-center">Detail buku</h2>
+                    <h2 class="text text-center fw-bold">Detail buku</h2>
                     <div class="sinopsis">
                         <h6 class="d-flex"><p class="fw-bold">Judul : </p>  {{ buku.judul }} </h6>
                         <h6 class="d-flex"> <p class="fw-bold">Penulis : </p> {{ buku.penulis }}</h6>
@@ -203,5 +203,6 @@ onMounted(() => {
     border-radius: 10%;
     box-shadow: 1px 1px 1px #8a8a8a;
     margin-bottom: 2%;
+    
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid pb-5" style="background-color:#6278B1">
         <div class="text-center p-5 text-white">
-            <h2>Riwayat kunjungan</h2>
+            <h2 class="fw-bold">Riwayat kunjungan</h2>
         </div>
         <div class="row m-0 text-white">
             <div class="layer pt2">
@@ -95,7 +95,7 @@ onMounted(() => {
 <style scoped>
 .text-center{
     font-family: "League Spartan", sans-serif;
-    font-size: 190%;
+    font-size: 100%;
 }
 .input-group-text {
     background-color: #fff;

@@ -2,7 +2,7 @@
     <div class="content fw-bold">
         <div class="container-fluid">
              <div class="text-center text-white pt-5">
-                 <h2>Isi kunjungan</h2>
+                 <h2 class="fw-bold">Isi kunjungan</h2>
              </div>
              <div class="layer mt-5" >
                  <form @submit.prevent="kirimData" class="py-3" autocomplete="off">

@@ -2,7 +2,7 @@
     <div class="content fw-bold">
         <div class="container-fluid">      
             <div class="text-center">
-                <h2>SELAMAT DATANG . . .</h2>
+                <h2 class="fw-bold">SELAMAT DATANG . . .</h2>
             </div>
             <div class="row py-5">    
                 <div class="row my-4 justify-content-center">
@@ -82,7 +82,7 @@ onMounted(()=>{
         height: 40px;
     }
     h2{
-        font-size: larger;
+        font-size: medium;
     }
     h3{
         font-size: large;
