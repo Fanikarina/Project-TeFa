@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid pb-5" style="background-color:#6278B1">
         <div class="text-center text-white pt-5">
-            <h2 class="fw-bold">Pencarian buku</h2>
+            <h2>Pencarian buku</h2>
         </div>
         <div class="content text-white pt-3 ">
             <div class="row m-0">
@@ -26,20 +26,20 @@
                     <input v-model="buku.judul" readonly type="text" style="box-shadow: 2px 2px 2px #424242;" class="form-control" placeholder="" aria-label=""/>
                 </div>
             </div>
-            <div class="layer mt-5">
+            <div class="layer">
                 <div class="card">
                     <img :src="buku.cover_buku" class="cover" alt="cover buku">
                 </div>
                 <div class="layer2">
-                    <h2 class="text text-center fw-bold">Detail buku</h2>
+                    <h2 class="text text-center">Detail buku</h2>
                     <div class="sinopsis">
-                        <h6 class="d-flex"><p class="fw-bold">Judul : </p>  {{ buku.judul }} </h6>
-                        <h6 class="d-flex"> <p class="fw-bold">Penulis : </p> {{ buku.penulis }}</h6>
-                        <h6 class="d-flex"> <p class="fw-bold">Penerbit :  </p> {{ buku.penerbit }}</h6>
-                        <h6 class="d-flex"> <p class="fw-bold">Tahun terbit : </p>{{ buku.tahun_terbit }}</h6>
-                        <h6> <p class="fw-bold">Deskripsi buku : </p>{{ buku.sinopsis }}</h6>
-                        <h6 class="d-flex"> <p class="fw-bold">Kategori : </p>{{ buku.kategori_buku?.nama }}</h6>
-                        <h6 class="d-flex"> <p class="fw-bold">Rak : </p>{{ buku.rak }}</h6>
+                        <p>Judul : {{ buku.judul }}</p>
+                        <p>Penulis : {{ buku.penulis }}</p>
+                        <p>Penerbit : {{ buku.penerbit }}</p>
+                        <p>Tahun terbit : {{ buku.tahun_terbit }}</p>
+                        <p>Sinopsis : {{ buku.sinopsis }}</p>
+                        <p>Kategori : {{ buku.kategori_buku?.nama }}</p>
+                        <p>Rak : {{ buku.rak }}</p>
                     </div>
                     <NuxtLink to="/buku/">
                         <input type="submit" class="button" value="Tutup">
@@ -89,27 +89,21 @@ onMounted(() => {
         width: 100%;
         box-shadow: 2px 2px 2px #727272;
     }
-
     .row.buku {
         padding-top: 2%;
         margin-left: 2%;
         border-radius: 50px;
 
     }
-
     .card {
         box-shadow: 1px 1px 1px #424242;
-        margin-bottom: 10%;
+        margin-bottom: 2rem;
         margin: auto;
-        width: 140px;
     }
-
     .card-img-top {
         object-fit: cover;
         object-position: 0 30;
-
-    } 
-
+    }
     .layer2 {
         background-color: #ffffff;
         border-radius: 25px;
@@ -118,25 +112,20 @@ onMounted(() => {
         box-shadow: 1px 1px 1px #424242;
     }
 }
-
-
 .text-center {
     font-family: "League Spartan", sans-serif;
     font-size: 190%;
 }
-
 .content {
     font-family: "League Spartan", sans-serif;
     font-size: 190%;
     text-align: center;
 }
-
 .my-3 {
     padding-right: 85%;
     padding-top: 3%;
     color: white;
 }
-
 .layer {
     display: flex;
     justify-content: center;
@@ -149,25 +138,22 @@ onMounted(() => {
     border-radius: 25px;
     box-shadow: 2px 2px 2px #727272;
 }
-
 .row.buku {
     padding-top: 2%;
     margin-left: 2%;
     border-radius: 50px;
 
 }
-
 .card {
     box-shadow: 1px 1px 1px #424242;
+    margin-bottom: 2rem;
     padding: 10px;
 }
-
 .card-img-top {
     object-fit: cover;
     object-position: 0 30;
     margin: auto;
 }
-
 .layer2 {
     background-color: #ffffff;
     border-radius: 25px;
@@ -175,16 +161,13 @@ onMounted(() => {
     margin-bottom: 2%;
     box-shadow: 1px 1px 1px #424242;
 }
-
 .text.text-center {
     padding-top: 3%;
     font-family: "League Spartan", sans-serif;
     font-size: 65%;
     color: rgb(0, 0, 0);
     text-align: center;
-
 }
-
 .sinopsis {
     font-family: "League Spartan", sans-serif;
     font-size: 50%;
@@ -192,17 +175,14 @@ onMounted(() => {
     text-align: left;
     margin-left: 5%;
 }
-
 .keterangan {
     margin: auto;
 }
-
 .button {
     font-size: medium;
     background-color: white;
     border-radius: 10%;
     box-shadow: 1px 1px 1px #8a8a8a;
     margin-bottom: 2%;
-    
 }
 </style>
